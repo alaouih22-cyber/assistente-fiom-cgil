@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <script>
+      // Vite HMR is disabled in AI Studio iframe environment.
+      // Intercept and silence Vite HMR WebSocket connection to prevent 'WebSocket closed without opened' errors.
+      (function() {
+        window.addEventListener('unhandledrejection', function(event) {
+          if (event && event.reason && typeof event.reason.message === 'string' && event.reason.message.includes('WebSocket')) {
+            event.preventDefault();
+            event.stopImmediatePropagation();
+          }
+        });
+        window.addEventListener('error', function(event) {
+          if (event && (event.message?.includes('WebSocket') || event.error?.message?.includes('WebSocket'))) {
+            event.preventDefault();
+            event.stopImmediatePropagation();
+          }
+        });
+
+        var OriginalWebSocket = window.WebSocket;
+        if (OriginalWebSocket) {
+          window.WebSocket = function(url, protocols) {
+            var isViteHmr = (typeof protocols === 'string' && protocols.indexOf('vite-hmr') !== -1) ||
+                            (Array.isArray(protocols) && protocols.indexOf('vite-hmr') !== -1) ||
+                            (typeof url === 'string' && (url.indexOf('token=') !== -1 || url.indexOf('@vite') !== -1));
+            if (isViteHmr) {
+              var emitter = new EventTarget();
+              var dummyWs = {
+                readyState: 1, // OPEN
+                OPEN: 1,
+                CONNECTING: 0,
+                CLOSING: 2,
+                CLOSED: 3,
+                send: function() {},
+                close: function() {
+                  dummyWs.readyState = 3;
+                  emitter.dispatchEvent(new Event('close'));
+                },
+                addEventListener: function(type, listener, options) {
+                  emitter.addEventListener(type, listener, options);
+                },
+                removeEventListener: function(type, listener, options) {
+                  emitter.removeEventListener(type, listener, options);
+                },
+                dispatchEvent: function(event) {
+                  return emitter.dispatchEvent(event);
+                }
+              };
+              setTimeout(function() {
+                try { emitter.dispatchEvent(new Event('open')); } catch (e) {}
+              }, 0);
+              return dummyWs;
+            }
+            return new OriginalWebSocket(url, protocols);
+          };
+          window.WebSocket.prototype = OriginalWebSocket.prototype;
+          window.WebSocket.CONNECTING = OriginalWebSocket.CONNECTING;
+          window.WebSocket.OPEN = OriginalWebSocket.OPEN;
+          window.WebSocket.CLOSING = OriginalWebSocket.CLOSING;
+          window.WebSocket.CLOSED = OriginalWebSocket.CLOSED;
+        }
+      })();
+    </script>
+    <title>Assistente Sindacale FIOM-CGIL – CSI Colombella</title>
+    <meta name="description" content="Piattaforma professionale di assistenza sindacale full-stack per lavoratrici, lavoratori, RSA, RSU e RLS di CSI Colombella (Gruppo Arvedi) e FIOM-CGIL Perugia." />
+    <meta property="og:title" content="Assistente Sindacale FIOM-CGIL – CSI Colombella" />
+    <meta property="og:description" content="Piattaforma professionale di assistenza sindacale full-stack per lavoratrici, lavoratori, RSA, RSU e RLS di CSI Colombella (Gruppo Arvedi) e FIOM-CGIL Perugia." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#064e3b" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="FIOM CSI" />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  </head>
+  <body class="bg-slate-50 text-slate-900 antialiased selection:bg-emerald-900 selection:text-amber-300">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

@@ -1,0 +1,379 @@
+{
+  "companyInfo": {
+    "name": "CSI S.r.l.",
+    "facility": "Stabilimento di Colombella (Perugia)",
+    "group": "Gruppo Arvedi",
+    "production": "Lavorazione e commercio nastri, lamiere in acciaio al carbonio e laminati piani a freddo / decapato",
+    "estimatedWorkers": 120,
+    "ccnlApplied": "CCNL Metalmeccanici Industria Federmeccanica-Assistal",
+    "ccnlStatus": "Contratto di riferimento storicamente applicato. Da riverificare con la direzione aziendale in sede di consultazione ex D.Lgs. 104/2022.",
+    "integrativeAgreementStatus": "Accordo integrativo aziendale non presente a catalogo ufficiale: ricercare archivi territoriali FIOM Perugia e verificare pattuizioni storiche di stabilimento.",
+    "rsuStatus": "Rappresentanza Sindacale Unitaria costituita con delegati FIOM-CGIL.",
+    "rlsStatus": "Rappresentante dei Lavoratori per la Sicurezza eletto dai lavoratori per lo stabilimento di Colombella.",
+    "fiomContactPerugia": {
+      "address": "Via Caciolle 12 / Via Belluno 10, Perugia",
+      "phone": "+39 075 506981",
+      "email": "fiom.perugia@umbria.cgil.it",
+      "delegatoTerritoriale": "Funzionario Territoriale Metalmeccanici Perugia"
+    }
+  },
+  "users": [
+    {
+      "id": "usr_admin",
+      "name": "Coordinamento FIOM Perugia",
+      "email": "admin.fiom@csi-colombella.it",
+      "role": "admin",
+      "department": "Sede Territoriale FIOM-CGIL",
+      "status": "active",
+      "createdAt": "2026-01-10T08:00:00Z",
+      "lastLogin": "2026-10-16T09:48:46.022Z"
+    },
+    {
+      "id": "usr_rsa_rsu",
+      "name": "Mario Rossi (Delegato RSU/RSA)",
+      "email": "mario.rossi@csi-colombella.it",
+      "role": "rsu",
+      "department": "Linee Taglio Nastri & Slitter",
+      "badgeNumber": "CSI-0412",
+      "level": "C3 (Ex 5° liv.)",
+      "status": "active",
+      "createdAt": "2026-01-15T09:00:00Z",
+      "lastLogin": "2026-10-16T09:48:46.023Z"
+    },
+    {
+      "id": "usr_rls",
+      "name": "Franco Vitali (RLS)",
+      "email": "franco.vitali@csi-colombella.it",
+      "role": "rls",
+      "department": "Manutenzione Meccanica & Impianti",
+      "badgeNumber": "CSI-0188",
+      "level": "B1 (Ex 6° liv.)",
+      "status": "active",
+      "createdAt": "2026-01-18T10:30:00Z",
+      "lastLogin": "2026-10-16T09:48:46.023Z"
+    },
+    {
+      "id": "usr_worker",
+      "name": "Luca Moretti (Lavoratore Turnista)",
+      "email": "luca.moretti@csi-colombella.it",
+      "role": "lavoratore",
+      "department": "Reparto Lamiere e Spianatura",
+      "badgeNumber": "CSI-0754",
+      "level": "D2 (Ex 3° liv.)",
+      "status": "active",
+      "createdAt": "2026-02-01T14:00:00Z",
+      "lastLogin": "2026-10-16T09:48:46.023Z"
+    }
+  ],
+  "tickets": [
+    {
+      "id": "tkt_001",
+      "code": "PRAT-2026-001",
+      "title": "Verifica calcolo maggiorazione straordinario notturno e turno festivo",
+      "category": "retribuzione",
+      "description": "Nel mese di gennaio 2026 risultano lavorate 16 ore di turno festivo notturno sulla linea di taglio, ma in cedolino la maggiorazione applicata sembra ferma al 50% invece del 65% previsto per notturno festivo.",
+      "workerId": "usr_worker",
+      "workerName": "Luca Moretti (Lavoratore Turnista)",
+      "workerDepartment": "Reparto Lamiere e Spianatura",
+      "assignedToId": "usr_rsa_rsu",
+      "assignedToName": "Mario Rossi (Delegato RSU/RSA)",
+      "priority": "media",
+      "status": "in_lavorazione",
+      "createdAt": "2026-02-10T11:20:00Z",
+      "updatedAt": "2026-02-14T16:00:00Z",
+      "deadline": "2026-03-01T12:00:00Z",
+      "notes": [
+        {
+          "id": "note_1",
+          "authorName": "Mario Rossi (Delegato RSU/RSA)",
+          "authorRole": "rsu",
+          "content": "Acquisito cartellino timbrature e prospetto turni. Verificato con tabelle CCNL Industria Metalmeccanica: art. 7 Sezione Quarta prevede 65% per lavoro straordinario notturno festivo.",
+          "isPrivate": false,
+          "createdAt": "2026-02-12T09:30:00Z"
+        },
+        {
+          "id": "note_2",
+          "authorName": "Mario Rossi (Delegato RSU/RSA)",
+          "authorRole": "rsu",
+          "content": "Nota riservata delegati: verificare se nel software paghe aziendale c è un errore di codifica per tutte le maestranze dei turni a ciclo continuo.",
+          "isPrivate": true,
+          "createdAt": "2026-02-12T09:35:00Z"
+        }
+      ],
+      "attachments": [
+        {
+          "id": "att_1",
+          "filename": "cedolino_gennaio_2026_estratto.pdf",
+          "size": 142000,
+          "mimeType": "application/pdf",
+          "uploadedAt": "2026-02-10T11:25:00Z",
+          "fileUrl": "/api/documents/cedolino_gennaio_2026_estratto.pdf"
+        }
+      ]
+    },
+    {
+      "id": "tkt_002",
+      "code": "PRAT-2026-002",
+      "title": "Segnalazione RLS: microclima e polveri reparto spianatura lamiere",
+      "category": "sicurezza",
+      "description": "Mancata manutenzione filtri dell impianto di aspirazione fumi e nebbie oleose presso la spianatrice 2. Segnalata presenza persistente di odori e polveri metalliche.",
+      "workerId": "usr_rls",
+      "workerName": "Franco Vitali (RLS)",
+      "workerDepartment": "Manutenzione Meccanica & Impianti",
+      "assignedToId": "usr_rls",
+      "assignedToName": "Franco Vitali (RLS)",
+      "priority": "alta",
+      "status": "incontro_convocato",
+      "createdAt": "2026-02-05T08:45:00Z",
+      "updatedAt": "2026-02-16T10:00:00Z",
+      "deadline": "2026-02-25T14:30:00Z",
+      "notes": [
+        {
+          "id": "note_3",
+          "authorName": "Franco Vitali (RLS)",
+          "authorRole": "rls",
+          "content": "Inviata richiesta formale al RSPP e al Medico Competente per sopralluogo congiunto ex art. 50 c.1 lett. b) D.Lgs. 81/08. Incontro fissato per il 25 febbraio.",
+          "isPrivate": false,
+          "createdAt": "2026-02-06T15:00:00Z"
+        }
+      ],
+      "attachments": []
+    }
+  ],
+  "documents": [
+    {
+      "id": "doc_ccnl_2024",
+      "title": "CCNL Metalmeccanici Industria 2021-2024 (Federmeccanica-Assistal)",
+      "category": "ccnl",
+      "description": "Testo consolidato e tabelle retributive ufficiali con minimi D1-A1 aggiornati. Clausole orari, ferie, comporto e diritti sindacali.",
+      "author": "Federmeccanica / FIOM-FIM-UILM",
+      "visibility": "public",
+      "tags": [
+        "CCNL",
+        "Metalmeccanici",
+        "Tabelle Retributive",
+        "Inquadramento"
+      ],
+      "filename": "ccnl_metalmeccanici_industria_sintesi.pdf",
+      "filesize": "1.8 MB",
+      "version": "Edizione Vigente 2024-2026",
+      "verified": true,
+      "verifiedSourceUrl": "https://www.federmeccanica.it/ccnl-metalmeccanici.html",
+      "updatedAt": "2026-01-01",
+      "contentSummary": "Disciplina contrattuale per industria metalmeccanica: classificazione in 9 livelli, orario 40h settimanali, maggiorazioni turni, previdenza Cometa e sanità integrativa Metasalute."
+    },
+    {
+      "id": "doc_csi_scheda",
+      "title": "Scheda Tecnica Stabilimento CSI Colombella - Gruppo Arvedi",
+      "category": "accordo_aziendale",
+      "description": "Mappatura reparti produttivi (nastri, lamiere, cesoiatura), organico stimato, linee guida storiche per la contrattazione integrativa territoriale FIOM Perugia.",
+      "author": "FIOM-CGIL Perugia - Ufficio Studi",
+      "visibility": "sindacale",
+      "tags": [
+        "CSI",
+        "Colombella",
+        "Arvedi",
+        "Accordo Integrativo",
+        "Reparti"
+      ],
+      "filename": "csi_colombella_profilo_industriale.pdf",
+      "filesize": "450 KB",
+      "version": "1.2 - Aggiornato 2026",
+      "verified": true,
+      "verifiedSourceUrl": "https://www.fiom-cgil.it",
+      "updatedAt": "2026-01-20",
+      "contentSummary": "Dossier stabilimento CSI Colombella: linee di lavorazione nastri e coils, orari a turni, organigramma della rappresentanza, cronologia accordi territoriali da ricercare."
+    },
+    {
+      "id": "doc_statuto_lav",
+      "title": "Legge 20 maggio 1970, n. 300 (Statuto dei Lavoratori)",
+      "category": "normativa",
+      "description": "Norme sulla tutela della libertà e dignità dei lavoratori, della libertà sindacale e dell attività sindacale nei luoghi di lavoro.",
+      "author": "Parlamento Italiano - Gazzetta Ufficiale",
+      "visibility": "public",
+      "tags": [
+        "Statuto Lavoratori",
+        "Art. 7",
+        "Art. 18",
+        "Art. 28",
+        "Diritti Sindacali"
+      ],
+      "filename": "legge_300_1970_statuto.pdf",
+      "filesize": "320 KB",
+      "version": "Testo coordinato Normattiva",
+      "verified": true,
+      "verifiedSourceUrl": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1970-05-20;300",
+      "updatedAt": "2026-01-05",
+      "contentSummary": "Principi fondamentali: divieto di controllo a distanza (art. 4), sanzioni disciplinari e diritto a difesa (art. 7), assemblee (art. 20), permessi RSU (art. 23-24), repressione condotta antisindacale (art. 28)."
+    },
+    {
+      "id": "doc_sicurezza_81",
+      "title": "D.Lgs. 9 aprile 2008, n. 81 - Testo Unico Sicurezza sul Lavoro",
+      "category": "sicurezza_rls",
+      "description": "Guida operativa con focus sui compiti, poteri e diritti di consultazione del Rappresentante dei Lavoratori per la Sicurezza (RLS, artt. 47-50).",
+      "author": "Ministero del Lavoro e delle Politiche Sociali",
+      "visibility": "public",
+      "tags": [
+        "D.Lgs 81/08",
+        "RLS",
+        "DVR",
+        "Prevenzione",
+        "Salute e Sicurezza"
+      ],
+      "filename": "dlgs_81_2008_guida_rls.pdf",
+      "filesize": "2.4 MB",
+      "version": "Coordinamento 2025/2026 INAIL",
+      "verified": true,
+      "verifiedSourceUrl": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2008-04-09;81",
+      "updatedAt": "2026-01-10",
+      "contentSummary": "Obblighi di sicurezza, consultazione preventiva del RLS sulla valutazione dei rischi (DVR), accesso agli ambienti, pause videoterminali e movimentazione manuale carichi."
+    }
+  ],
+  "events": [
+    {
+      "id": "evt_001",
+      "title": "Riunione Periodica di Prevenzione e Protezione ex art. 35 D.Lgs. 81/08",
+      "category": "visita_rls",
+      "date": "2026-02-25",
+      "time": "14:30",
+      "location": "Sala Riunioni CSI Colombella",
+      "ticketId": "tkt_002",
+      "priority": "alta",
+      "isConfirmed": true,
+      "sourceOfDeadline": "Art. 35 c. 1 D.Lgs. 81/2008 (Obbligatoria annuale per aziende con oltre 15 lavoratori)",
+      "assignedRole": "RLS e RSU"
+    },
+    {
+      "id": "evt_002",
+      "title": "Scadenza termine perentorio 5 giorni memorie disciplinari (procedura art. 7 L. 300/70)",
+      "category": "termine_legale",
+      "date": "2026-02-28",
+      "time": "18:00",
+      "location": "Ufficio Risorse Umane CSI S.r.l.",
+      "priority": "perentoria",
+      "isConfirmed": true,
+      "sourceOfDeadline": "Art. 7 c. 5 Legge 300/1970 e Art. 9 Sez. Quarta CCNL Metalmeccanici",
+      "assignedRole": "RSU / RSA / Delegato FIOM"
+    },
+    {
+      "id": "evt_003",
+      "title": "Assemblea Sindacale Retribuita Lavoratori CSI Colombella (Turni 1° e 2°)",
+      "category": "assemblea",
+      "date": "2026-03-05",
+      "time": "10:00",
+      "location": "Mensa aziendale CSI Colombella",
+      "priority": "alta",
+      "isConfirmed": false,
+      "sourceOfDeadline": "Art. 20 L. 300/1970 (Diritto a 10 ore annue retribuite di assemblea)",
+      "assignedRole": "RSU FIOM-CGIL"
+    }
+  ],
+  "auditLogs": [
+    {
+      "id": "log_1792266644466_or83",
+      "timestamp": "2026-10-17T19:50:44.466Z",
+      "userId": "usr_rsa_rsu",
+      "userName": "Mario Rossi (Delegato RSU/RSA)",
+      "userRole": "rsu",
+      "action": "GEMINI_CHAT_QUERY",
+      "resource": "ai:fiom",
+      "details": "Richiesta a Assistente FIOM (Nel CCNL Metalmeccanici quanti giorni ho...)"
+    },
+    {
+      "id": "log_1792146986128_6h7y",
+      "timestamp": "2026-10-16T10:36:26.128Z",
+      "userId": "usr_rsa_rsu",
+      "userName": "Mario Rossi (Delegato RSU/RSA)",
+      "userRole": "rsu",
+      "action": "AI_SEARCH_QUERY",
+      "resource": "search:semantic_archive",
+      "details": "Ricerca semantica: \"Cerca nel CCNL le regole sugli straordinari e le m\" (8 risultati recuperati)"
+    },
+    {
+      "id": "log_1792146971741_8abz",
+      "timestamp": "2026-10-16T10:36:11.741Z",
+      "userId": "usr_rsa_rsu",
+      "userName": "Mario Rossi (Delegato RSU/RSA)",
+      "userRole": "rsu",
+      "action": "AI_SEARCH_QUERY",
+      "resource": "search:semantic_archive",
+      "details": "Ricerca semantica: \"Cerca nel CCNL le regole sugli straordinari e le m\" (8 risultati recuperati)"
+    },
+    {
+      "id": "log_1792146941656_wyfj",
+      "timestamp": "2026-10-16T10:35:41.656Z",
+      "userId": "usr_rsa_rsu",
+      "userName": "Mario Rossi (Delegato RSU/RSA)",
+      "userRole": "rsu",
+      "action": "AI_SEARCH_QUERY",
+      "resource": "search:semantic_archive",
+      "details": "Ricerca semantica: \"Cerca nel CCNL le regole sugli straordinari e le m\" (8 risultati recuperati)"
+    },
+    {
+      "id": "log_1792146892864_w5m0",
+      "timestamp": "2026-10-16T10:34:52.864Z",
+      "userId": "usr_rsa_rsu",
+      "userName": "Mario Rossi (Delegato RSU/RSA)",
+      "userRole": "rsu",
+      "action": "AI_SEARCH_QUERY",
+      "resource": "search:semantic_archive",
+      "details": "Ricerca semantica: \"Dove trovo la legge sui controlli a distanza dei l\" (8 risultati recuperati)"
+    },
+    {
+      "id": "log_1792146552443_adod",
+      "timestamp": "2026-10-16T10:29:12.443Z",
+      "userId": "usr_rsa_rsu",
+      "userName": "Mario Rossi (Delegato RSU/RSA)",
+      "userRole": "rsu",
+      "action": "AI_SEARCH_QUERY",
+      "resource": "search:semantic_archive",
+      "details": "Ricerca semantica: \"Dove trovo la legge sui controlli a distanza?\" (8 risultati recuperati)"
+    },
+    {
+      "id": "log_001",
+      "timestamp": "2026-10-16T09:48:46.023Z",
+      "userId": "system",
+      "userName": "Inizializzazione Sistema",
+      "userRole": "system",
+      "action": "BOOT_SYSTEM",
+      "resource": "database",
+      "details": "Piattaforma Assistente Sindacale FIOM-CGIL avviata in ambiente sicuro."
+    }
+  ],
+  "circulars": [
+    {
+      "id": "circ_001",
+      "code": "CIRC-FIOM-2026-01",
+      "title": "Convocazione Assemblea Generale Lavoratori CSI Colombella su Turni e Salari",
+      "category": "assemblea",
+      "summary": "Assemblea retribuita di 2 ore ex art. 20 L. 300/70 articolata su tutti i turni di produzione per discutere carichi di lavoro e accordo integrativo.",
+      "content": "La RSU FIOM-CGIL convoca per giovedì 5 marzo 2026 l'assemblea retribuita delle maestranze di CSI Colombella presso la sala mensa. Ordine del giorno: 1. Andamento turni di lavoro; 2. Verifica applicazione maggiorazioni notturne e festive; 3. Avvio della piattaforma di contrattazione integrativa aziendale con il Gruppo Arvedi.",
+      "publishedAt": "2026-02-15T09:00:00Z",
+      "isUrgent": true,
+      "author": "RSU FIOM-CGIL Colombella"
+    },
+    {
+      "id": "circ_002",
+      "code": "CIRC-FIOM-2026-02",
+      "title": "Aggiornamento Minimi Contrattuali CCNL Metalmeccanici e Scatti Biennali",
+      "category": "ccnl",
+      "summary": "Nota tecnica FIOM Perugia sulle nuove tabelle retributive vigenti per i livelli D1-A1 e decorrenze per i lavoratori turnisti.",
+      "content": "Si ricorda a tutte le lavoratrici e i lavoratori che con la decorrenza contrattuale del CCNL Federmeccanica-Assistal sono entrati a regime i nuovi minimi tabellari base. I delegati RSU sono a disposizione per il controllo dei cedolini.",
+      "publishedAt": "2026-02-10T11:00:00Z",
+      "isUrgent": false,
+      "author": "Ufficio Sindacale FIOM Perugia"
+    },
+    {
+      "id": "circ_003",
+      "code": "CIRC-FIOM-2026-03",
+      "title": "Segnalazione Sicurezza RLS: Sostituzione Filtri Aspirazione Reparto Lamiere",
+      "category": "sicurezza",
+      "summary": "Comunicazione urgente RLS su sopralluogo congiunto con RSPP e Medico Competente per il ripristino dell efficienza dei filtri fumi.",
+      "content": "A seguito dell'attivazione formale dell'RLS ex art. 50 D.Lgs. 81/2008, la Direzione Aziendale ha programmato l'intervento di bonifica e sostituzione dei filtri di captazione polveri e nebbie oleose presso la spianatrice 2.",
+      "publishedAt": "2026-02-18T14:30:00Z",
+      "isUrgent": true,
+      "author": "Franco Vitali (RLS FIOM)"
+    }
+  ],
+  "pushSubscriptions": []
+}

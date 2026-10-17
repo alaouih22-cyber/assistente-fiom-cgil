@@ -1,0 +1,6 @@
+{
+  "summary": "Piano di implementazione per la pulizia enterprise dell'applicazione: eliminazione totale dei mock data (nomi fittizi come Mario Rossi, dossier inventati), implementazione di stati vuoti puliti e professionali, gestione reale dell'identità dell'operatore e rifinitura UI/UX stile SaaS enterprise secondo le linee guida di frontend-design.",
+  "updatedAt": "2026-10-17T19:44:40.266138544Z",
+  "requestFeedback": true,
+  "userFacing": true
+}

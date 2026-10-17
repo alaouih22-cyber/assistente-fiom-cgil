@@ -1,0 +1,6 @@
+{
+  "name": "Assistente Sindacale FIOM-CGIL – CSI Colombella",
+  "description": "Piattaforma professionale di assistenza sindacale full-stack per lavoratrici, lavoratori, RSA, RSU e RLS di CSI Colombella (Gruppo Arvedi) e FIOM-CGIL Perugia.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
